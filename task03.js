@@ -1,6 +1,7 @@
-// Definisikan fungsi 'harga' untuk menghitung total harga pesanan
+// Fungsi 'harga' untuk menghitung total harga pesanan
 function harga(price, promoCode, taxPercentage, includeDelivery, callback) {
     let discount = 0; // Inisialisasi variabel diskon dengan nilai awal 0
+    const totalBeforeTax = price; // Simpan harga asli sebelum dikenakan pajak
   
     // Tentukan diskon berdasarkan promoCode yang diberikan
     if (promoCode === "FAZZFOOD50") {
@@ -10,9 +11,6 @@ function harga(price, promoCode, taxPercentage, includeDelivery, callback) {
         // Jika promoCode DITRAKTIR60, berikan diskon maksimum 30.000 atau 60% dari harga, mana yang lebih kecil
         discount = Math.min(price * 0.6, 30000);
     }
-  
-    // Hitung total sebelum pajak
-    const totalBeforeTax = price; 
   
     // Hitung total tanpa diskon
     const totalWithoutTax = price - discount;

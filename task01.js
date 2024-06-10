@@ -1,13 +1,10 @@
-function cekPalindrom(kata) {
-  let pisahKata = kata.split("");
-  let gantiKata = pisahKata.reverse();
-  let hasil = gantiKata.join("");
-
-  if (hasil === kata) {
-    return "Palindrom";
-  } else {
-    return "Bukan Palindrom";
-  }
+function cekPalindrom (kata) {
+let kata2 = ""
+for(let i =kata.length; i>0;i--){
+  kata2 = kata2 + kata[i-1]
 }
-
-console.log(cekPalindrom("malam"));
+if (kata2 === kata){
+  console.log("Polindrom")
+}
+}
+(cekPalindrom("malam"))
